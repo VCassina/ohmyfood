@@ -2,7 +2,7 @@
 
 Ici figure la branche principale des grandes évolutions majeures confirmées lors de l'élaboration du projet.
 
-Les autres branches feront figures d'avancées temporaires non-validés, de projets en chantier.
+Les autres branches feront figures d'avancées temporaires non-validées, de projets en chantier.
 
 Des chantiers necessaires pour batire celle ci.
 
