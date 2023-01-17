@@ -8,30 +8,51 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+@mixin usualy-title {
+    font-size: xx-large;
+}
+
+@mixin core-mrg {
+    margin: 0 1em;
+}
+
+@mixin txt-mng {
+    font-stretch: ultra-expanded;
+}
+
 $xtra-wdt: 105%;
 $txt-nd-color: #353535;
-
+$prm-color: #9356DC;
+$nd-color: #FF79DA;
+$rnd-icn: 2em;
+$fk-wdt: #F7F7F7;
+$fk-grey: #7E7E7E;
 
 .header {
+    @include txt-mng;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     &__logo {
         width: $xtra-wdt;
         padding: 15px;
         box-shadow:  0px 5px 5px #D2D2D2;
         z-index: 1;
+
         &-img {
             width: 50%;
             min-width: 5em;
             margin-left: 25%;   
         }
     }
+
     &__location {
         width: $xtra-wdt;
         background-color: #EAEAEA;
         color: $txt-nd-color;
         font-style: normal;
+
         & > span {
             justify-content: center;
             font-size: x-large;
@@ -44,15 +65,20 @@ $txt-nd-color: #353535;
 }
 
 .concept {
+    @include txt-mng;
+    @include core-mrg;
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-top: 2em;
+
     &__title {
         font-size: xx-large;
         line-height: 1.25em;
         width: 70%;
         margin-left: 15%;
     }
+
     &__txt {
         font-size: x-large;
         line-height: 1.25em;
@@ -62,23 +88,196 @@ $txt-nd-color: #353535;
         width: 90%;
         margin-left: 5%;
     }
+
     &__button {
         text-decoration: none;
         align-self: center;
-        border-radius: 25px;
-        background: linear-gradient(#FF79DA, #9356DC);
+        border-radius: 5em;
+        background: linear-gradient($nd-color, $prm-color);
         box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
         width: fit-content;
         height: fit-content;
-        padding: 1.4em;
+        padding: 1.5em;
         position: relative;
         bottom: 15px;
         display: block;
+
         &-txt {
             color: #FFF;
-            font-size: 18px;
+            font-size: 20px;
             line-height: 20px;
             font-weight: bold;
+        }
+    }
+}
+
+.instruction {
+    @include txt-mng;
+    @include core-mrg;
+    margin-top: 4em;
+    display:flex;
+    flex-direction: column;
+
+    &__title {
+        @include usualy-title;
+    }
+
+    &__steps {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5em;
+        align-items: center;
+
+        &-unit {
+            display: grid;
+            grid-template-columns: 1fr 1fr 8fr;
+            width: 80%;
+            background-color: $fk-wdt;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 2em;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 1.75em;
+            gap: 2em;
+            margin-left: 5%;
+
+            &--number {
+            color: #FFF;
+            background-color: $prm-color;
+            border-radius: 100%;
+            text-align: center;
+            width: $rnd-icn;
+            height: $rnd-icn;
+            line-height: $rnd-icn;
+
+            // Evite la déformation en cas de très basse résolution.
+            min-width: $rnd-icn;
+            min-height: $rnd-icn;
+
+            // Mais ne s'adapte pas à toutes les résolutions...
+            // La position relative n'est pas responsive !
+            // position: relative;
+            // right: ;
+            position: relative;
+            right: 2.5em;
+            font-size: x-large;
+            }
+
+            &--txt {
+                font-size: x-large;
+                font-weight: bold;
+
+                position: relative;
+                right: 2.5em;
+            }
+
+            &--icn {
+                color: $fk-grey;
+                font-size: xx-large;
+
+                position: relative;
+                right: 1em;
+            }
+        }
+    }
+}
+
+.fa-store {
+    color: $prm-color;
+}
+
+.restaurants {
+    @include txt-mng;
+    @include core-mrg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6em;
+
+    &__title {
+        @include usualy-title;
+        align-self: baseline;
+    }
+
+    &__menu {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 4em;
+    }
+
+    &-card {
+        height: 22em;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        overflow: hidden;
+
+        &__frame {
+            min-width: 100%;
+            height: 16em;
+            overflow: hidden;
+
+            &--picture {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__new {
+            position: relative;
+            bottom: 14em;
+            left: 75%;
+            width: 5em;
+            height: 2em;
+            line-height: 2em;
+            text-align: center;
+            justify-content: center;
+            background: #99E2D0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.30);
+            border-radius: 2px;
+            color: #008766;
+            padding: 0.25em;
+            font-size: large;
+
+            //En basse définition ?
+            //Définir un breakpoint avec "new" au lieu de "nouveau" ou bien une nouvelle disposition.
+        }
+
+        &__txt {
+            display: flex;
+            flex-direction:row;
+            width: 100%;
+            justify-content: space-between;
+
+            &--content {
+                margin-left: 1em;
+                display: flex;
+                flex-direction:column;
+                line-height: 0em;
+            }
+
+            &--new {
+            position: relative;
+            bottom: 5em;
+            }
+            
+            &--name {
+                font-size: x-large;
+            }
+
+            &--undername {
+                font-size: larger;
+            }
+
+            &--icn {
+                align-self: center;
+                font-size: xx-large;
+                margin-right: 1em;
+                overflow: hidden;
+            }
         }
     }
 }

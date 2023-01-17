@@ -1,16 +1,19 @@
-17/01/2023 - Rélisation de la page d'accueil en HTLM/CSS.
+18/01/2023 - Rélisation de la page d'accueil en HTLM/CSS.
 
 Avancées :
 
-- Importation de Roboto/Icone.
 - Mise en place de notation BEM sur :
-	- Le header.
-	- L'article "concept".
+	- Le contenu des menus.
+	- Les cards.
 
 - Mise en place du code SCSS sur :
-	- Le header.
-	- L'article "concept" (h1).
+	- Le contenu des menus.
+	- Les cards.
+
+- Ajustement sur le contenu "description".
 
 A suivre :
 
-- Suite du site en HTML(BEM)/SCSS.
+- Terminer la page d'accueil en HTML/CSS.
+	- Le footer.
+	- Des animations simples (sur les coeurs + card cliquable !).

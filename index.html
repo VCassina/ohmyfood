@@ -41,46 +41,76 @@
         </article>
 
         <article class="instruction">
-            <h2>Fonctionnement</h2>
-            <p><i></i><i></i>Choisissez un restaurant</p>
-            <p><i></i><i></i>Composez votre menu</p>
-            <p><i></i><i></i>Dégustez au restaurant</p>
+                <h2 class="instruction__title">Fonctionnement</h2>
+                <div class="instruction__steps">
+                    <div class="instruction__steps-unit">
+                        <span class="instruction__steps-unit--number">1</span><i class="fa-solid fa-mobile-screen-button instruction__steps-unit--icn"></i><span class="instruction__steps-unit--txt">Choisissez un restaurant</span>
+                    </div>
+                    <div class="instruction__steps-unit">
+                        <span class="instruction__steps-unit--number">2</span><i class="fa-solid fa-list instruction__steps-unit--icn"></i><span class="instruction__steps-unit--txt">Composez votre menu</span>
+                    </div>
+                    <div class="instruction__steps-unit">
+                        <span class="instruction__steps-unit--number">3</span><i class="fa-solid fa-store instruction__steps-unit--icn"></i><span class="instruction__steps-unit--txt">Dégustez au restaurant</span>
+                    </div> 
+                </div>
         </article>
 
-        <main>
-            <h2>Restaurants</h2>
-            <div>
-                <img src="ASSETS/IMAGES/RESTAURANTS/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La Palette du goût restaurant Paris Ménilmontant">
-                <p>Nouveau</p>
-                <h3>La palette du goût</h3>
-                <p>Ménilmontant</p>
-                <i></i>
-                <i></i>
-            </div>
-            <div>
-                <h2>Restaurants</h2>
-                <img src="ASSETS/IMAGES/RESTAURANTS/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée restaurant Paris Charonne">
-                <p>Nouveau</p>
-                <h3>La note enchantée</h3>
-                <p>Charonne</p>
-                <i></i>
-                <i></i>
-            </div>
-            <div>
-                <h2>Restaurants</h2>
-                <img src="ASSETS/IMAGES/RESTAURANTS/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française restaurant Paris Cité Rouge">
-                <h3>À la française</h3>
-                <p>Cité Rouge</p>
-                <i></i>
-                <i></i>
-            </div>
-            <div>
-                <h2>Restaurants</h2>
-                <img src="ASSETS/IMAGES/RESTAURANTS/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens restaurant Paris Folie-Mérancourt">
-                <h3>Le délice des sens</h3>
-                <p>Folie-Mérancourt</p>
-                <i></i>
-                <i></i>
+        <main class="restaurants">
+            <h2 class="restaurants__title">Restaurants</h2>
+            <div class="restaurants__menu">
+                <div class="restaurants-card">
+                    <div class="restaurants-card__frame">
+                        <img class="restaurants-card__frame--picture" src="ASSETS/IMAGES/RESTAURANTS/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La Palette du goût restaurant Paris Ménilmontant">
+                    </div>
+                    <p class="restaurants-card__new">Nouveau</p>
+                    <div class="restaurants-card__txt restaurants-card__txt--new">
+                        <div class="restaurants-card__txt--content">
+                            <h3 class="restaurants-card__txt--name">La palette du goût</h3>
+                            <p class="restaurants-card__txt--undername">Ménilmontant</p>
+                        </div>
+                        <i class="restaurants-card__txt--icn fa-regular fa-heart"></i>
+                    </div>
+                </div>
+
+                <div class="restaurants-card">
+                    <div class="restaurants-card__frame">
+                        <img class="restaurants-card__frame--picture" src="ASSETS/IMAGES/RESTAURANTS/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée restaurant Paris Charonne">
+                    </div>
+                    <p class="restaurants-card__new">Nouveau</p>
+                    <div class="restaurants-card__txt restaurants-card__txt--new">
+                        <div class="restaurants-card__txt--content">
+                            <h3 class="restaurants-card__txt--name">La note enchantée</h3>
+                            <p class="restaurants-card__txt--undername">Charonne</p>
+                        </div>
+                        <i class="restaurants-card__txt--icn fa-regular fa-heart"></i>
+                    </div>
+                </div>
+
+                <div class="restaurants-card">
+                    <div class="restaurants-card__frame">
+                        <img class="restaurants-card__frame--picture" src="ASSETS/IMAGES/RESTAURANTS/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française restaurant Paris Cité Rouge">
+                    </div>
+                    <div class="restaurants-card__txt">
+                        <div class="restaurants-card__txt--content">
+                            <h3 class="restaurants-card__txt--name">À la française</h3>
+                            <p class="restaurants-card__txt--undername">Cité Rouge</p>
+                        </div>
+                        <i class="restaurants-card__txt--icn fa-regular fa-heart"></i>
+                    </div>
+                </div>
+
+                <div class="restaurants-card">
+                    <div class="restaurants-card__frame">
+                        <img class="restaurants-card__frame--picture" src="ASSETS/IMAGES/RESTAURANTS/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens restaurant Paris Folie-Mérancourt">
+                    </div>
+                    <div class="restaurants-card__txt">
+                        <div class="restaurants-card__txt--content">
+                            <h3 class="restaurants-card__txt--name">Le délice des sens</h3>
+                            <p class="restaurants-card__txt--undername">Folie-Mérancourt</p>
+                        </div>
+                        <i class="restaurants-card__txt--icn fa-regular fa-heart"></i>
+                    </div>
+                </div>
             </div>
         </main>
 
