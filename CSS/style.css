@@ -1,0 +1,76 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__logo {
+  width: 105%;
+  padding: 15px;
+  box-shadow: 0px 5px 5px #D2D2D2;
+  z-index: 1;
+}
+.header__logo-img {
+  width: 50%;
+  min-width: 5em;
+  margin-left: 25%;
+}
+.header__location {
+  width: 105%;
+  background-color: #EAEAEA;
+  color: #353535;
+  font-style: normal;
+}
+.header__location > span {
+  justify-content: center;
+  font-size: x-large;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75em;
+}
+
+.concept {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.concept__title {
+  font-size: xx-large;
+  line-height: 1.25em;
+  width: 70%;
+  margin-left: 15%;
+}
+.concept__txt {
+  font-size: x-large;
+  line-height: 1.25em;
+  color: #353535;
+  position: relative;
+  bottom: 30px;
+  width: 90%;
+  margin-left: 5%;
+}
+.concept__button {
+  text-decoration: none;
+  align-self: center;
+  border-radius: 25px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  width: fit-content;
+  height: fit-content;
+  padding: 1.4em;
+  position: relative;
+  bottom: 15px;
+  display: block;
+}
+.concept__button-txt {
+  color: #FFF;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

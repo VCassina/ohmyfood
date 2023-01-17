@@ -1,0 +1,11 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch SCSS/style.scss:CSS/style.css -w"
+  },
+  "author": "",
+  "license": "ISC"
+}
