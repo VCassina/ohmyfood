@@ -8,7 +8,8 @@
         <link href="CSS/style.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
     </head>
     
 	<body>
@@ -18,9 +19,9 @@
                     <img src="ASSETS/IMAGES/LOGO/ohmyfood.png" alt="OhMyFood Logo" class="header__logo-img"> 
                 </div>
                 <div class="header__location">
-                    <span class="location">
-                        <i class="fa-solid fa-location-dot location__icone"></i>
-                        <p class="location__txt">Paris, Belleville</p>
+                    <span class="header__location--content">
+                        <i class="fa-solid fa-location-dot header__location--icn"></i>
+                        <p class="header__location--txt">Paris, Belleville</p>
                     </span>
                 </div>
             </div>
@@ -41,6 +42,7 @@
         </article>
 
         <article class="instruction">
+            <div class="instruction--margin">
                 <h2 class="instruction__title">Fonctionnement</h2>
                 <div class="instruction__steps">
                     <div class="instruction__steps-unit">
@@ -53,9 +55,10 @@
                         <span class="instruction__steps-unit--number">3</span><i class="fa-solid fa-store instruction__steps-unit--icn"></i><span class="instruction__steps-unit--txt">Dégustez au restaurant</span>
                     </div> 
                 </div>
+            </div>
         </article>
 
-        <main class="restaurants">
+        <main class="restaurants">    
             <h2 class="restaurants__title">Restaurants</h2>
             <div class="restaurants__menu">
                 <div class="restaurants-card">
@@ -68,7 +71,11 @@
                             <h3 class="restaurants-card__txt--name">La palette du goût</h3>
                             <p class="restaurants-card__txt--undername">Ménilmontant</p>
                         </div>
-                        <i class="restaurants-card__txt--icn fa-regular fa-heart"></i>
+                        <label class="restaurants-checkbox">
+                            <input type="checkbox">
+                            <i class="fa-regular fa-heart restaurants-checkbox__icn"></i>
+                            <i class="fa-solid fa-heart restaurants-checkbox__icn-fav"></i>
+                        </label>
                     </div>
                 </div>
 
@@ -82,7 +89,11 @@
                             <h3 class="restaurants-card__txt--name">La note enchantée</h3>
                             <p class="restaurants-card__txt--undername">Charonne</p>
                         </div>
-                        <i class="restaurants-card__txt--icn fa-regular fa-heart"></i>
+                        <label class="restaurants-checkbox">
+                            <input type="checkbox">
+                            <i class="fa-regular fa-heart restaurants-checkbox__icn"></i>
+                            <i class="fa-solid fa-heart restaurants-checkbox__icn-fav"></i>
+                        </label>
                     </div>
                 </div>
 
@@ -95,7 +106,11 @@
                             <h3 class="restaurants-card__txt--name">À la française</h3>
                             <p class="restaurants-card__txt--undername">Cité Rouge</p>
                         </div>
-                        <i class="restaurants-card__txt--icn fa-regular fa-heart"></i>
+                        <label class="restaurants-checkbox">
+                            <input type="checkbox">
+                            <i class="fa-regular fa-heart restaurants-checkbox__icn"></i>
+                            <i class="fa-solid fa-heart restaurants-checkbox__icn-fav"></i>
+                        </label>
                     </div>
                 </div>
 
@@ -108,20 +123,36 @@
                             <h3 class="restaurants-card__txt--name">Le délice des sens</h3>
                             <p class="restaurants-card__txt--undername">Folie-Mérancourt</p>
                         </div>
-                        <i class="restaurants-card__txt--icn fa-regular fa-heart"></i>
+                        <label class="restaurants-checkbox">
+                            <input type="checkbox">
+                            <i class="fa-regular fa-heart restaurants-checkbox__icn"></i>
+                            <i class="fa-solid fa-heart restaurants-checkbox__icn-fav"></i>
+                        </label>
                     </div>
                 </div>
             </div>
         </main>
 
         <footer>
-            <img src="ASSETS/IMAGES/LOGO/ohmyfood@2x.svg">
-            <span>
-                <p><i></i>Proposer un restaurant</p>
-                <p><i></i>Devenir Partenaire</p>   
-                <p>Mentions légales</p>
-                <p>Contact</p>
-            </span>
+            <div class="footer">
+                <h2 class="footer__title">ohmyfood</h2>
+                <div class="footer__content">
+                    <a href="index.html" class="footer__content--grid">
+                        <i class="fa-solid fa-utensils footer__content--icn"></i>
+                        Proposer un restaurant
+                    </a>
+                    <a href="index.html" class="footer__content--grid">
+                        <i class="fa-solid fa-handshake-angle footer__content--icn"></i>
+                        Devenir Partenaire
+                    </a>   
+                    <a href="index.html">
+                        Mentions légales
+                    </a>
+                    <a href="index.html">
+                        Contact
+                    </a>
+                </div>
+            </div>
         </footer>
 	</body>
 </html>

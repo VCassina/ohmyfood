@@ -1,24 +1,9 @@
+// 7 - 1 : répartition du 7-1 plus tard, à la fin ou avant si j'en ressens le besoin.
 // @import "";
 // @import "";
 // @import "";
 // @import "";
 // @import "";
-
-body {
-	font-family: 'Roboto', sans-serif;
-}
-
-@mixin usualy-title {
-    font-size: xx-large;
-}
-
-@mixin core-mrg {
-    margin: 0 1em;
-}
-
-@mixin txt-mng {
-    font-stretch: ultra-expanded;
-}
 
 $xtra-wdt: 105%;
 $txt-nd-color: #353535;
@@ -28,22 +13,74 @@ $rnd-icn: 2em;
 $fk-wdt: #F7F7F7;
 $fk-grey: #7E7E7E;
 
+
+body {
+	font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #D2D2D2;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    &, .footer {
+        color: #FFFFFF;
+    }
+}
+
+footer {
+    margin-top: 5em;
+    padding-bottom: 1em;
+    background-color: #353535;
+    position: absolute;
+    left: 0;
+    width: $xtra-wdt;
+}
+
+@mixin usualy-title {
+    font-size: xx-large;
+}
+
+@mixin core-mrg {
+    margin: 0 2em;
+}
+
+@mixin txt-mng {
+    font-stretch: ultra-expanded;
+}
+
+@font-face {
+    font-family: 'Revalia';
+    src: url(http://fonts.googleapis.com/css?family=Revalia);
+  }
+
 .header {
     @include txt-mng;
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 2em;
+    background-color: #FFFFFF;
 
     &__logo {
-        width: $xtra-wdt;
+        display: flex;
+        flex-direction: row;
+        width: 105%;
         padding: 15px;
-        box-shadow:  0px 5px 5px #D2D2D2;
+        box-shadow:  0px 5px 5px #D2D2D2;;
         z-index: 1;
+        justify-content: center;
 
         &-img {
-            width: 50%;
-            min-width: 5em;
-            margin-left: 25%;   
+            max-width: 20em;
+            min-width: 5em;  
         }
     }
 
@@ -65,28 +102,33 @@ $fk-grey: #7E7E7E;
 }
 
 .concept {
+    margin: 0;
     @include txt-mng;
-    @include core-mrg;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-top: 2em;
+    padding: 2em 0;
+
+    margin-top: 10em;
+    width: 100%;
 
     &__title {
-        font-size: xx-large;
+        
+        @include usualy-title;
         line-height: 1.25em;
         width: 70%;
-        margin-left: 15%;
+        margin-bottom: 1em;
     }
 
     &__txt {
         font-size: x-large;
-        line-height: 1.25em;
+        font-weight: lighter;
+        line-height: 1.5em;
         color: $txt-nd-color;
         position: relative;
         bottom: 30px;
-        width: 90%;
-        margin-left: 5%;
+        width: 85%;
     }
 
     &__button {
@@ -97,7 +139,7 @@ $fk-grey: #7E7E7E;
         box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
         width: fit-content;
         height: fit-content;
-        padding: 1.5em;
+        padding: 1.5em 2em;
         position: relative;
         bottom: 15px;
         display: block;
@@ -113,12 +155,17 @@ $fk-grey: #7E7E7E;
 
 .instruction {
     @include txt-mng;
-    @include core-mrg;
-    margin-top: 4em;
+    margin: 2em 0;
+    // Padding équivalent à la mixin core-mrg mais permet d'avoir une valeur interne et cela pour préserver le rendu finale -
+    // En accord avec la maquette, le background-color blanc peut désormais couvrir toute la widht.
+    padding: 0 2em 4em;
     display:flex;
     flex-direction: column;
+    width: 100%;
+    background-color: #FFF;
 
     &__title {
+        margin-top: 2em;
         @include usualy-title;
     }
 
@@ -139,8 +186,7 @@ $fk-grey: #7E7E7E;
             justify-content: center;
             align-items: center;
             padding: 1.75em;
-            gap: 2em;
-            margin-left: 5%;
+            background: #F6F6F6;
 
             &--number {
             color: #FFF;
@@ -156,11 +202,9 @@ $fk-grey: #7E7E7E;
             min-height: $rnd-icn;
 
             // Mais ne s'adapte pas à toutes les résolutions...
-            // La position relative n'est pas responsive !
-            // position: relative;
-            // right: ;
+            // Pose des soucis à partir d'environ 400px.
             position: relative;
-            right: 2.5em;
+            right: 2.2em;
             font-size: x-large;
             }
 
@@ -169,22 +213,22 @@ $fk-grey: #7E7E7E;
                 font-weight: bold;
 
                 position: relative;
-                right: 2.5em;
+                right: 2.25em;
             }
 
             &--icn {
                 color: $fk-grey;
                 font-size: xx-large;
+                margin-right: 1em;
 
                 position: relative;
                 right: 1em;
+                &:hover {
+                    color: $prm-color;
+                }
             }
         }
     }
-}
-
-.fa-store {
-    color: $prm-color;
 }
 
 .restaurants {
@@ -193,7 +237,7 @@ $fk-grey: #7E7E7E;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 6em;
+    margin-top: 4em;
 
     &__title {
         @include usualy-title;
@@ -213,6 +257,7 @@ $fk-grey: #7E7E7E;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
         overflow: hidden;
+        background-color: #FFF;
 
         &__frame {
             min-width: 100%;
@@ -230,6 +275,12 @@ $fk-grey: #7E7E7E;
             position: relative;
             bottom: 14em;
             left: 75%;
+
+            // Réglerait la question de la responsivité mais ne semble pas marcher avec autre chose qu'une image/video...
+            // object-position: right top ;
+            // Sinon go breakpoint plus tard mais ça serait dommage si une instruction existe déjà.
+            // Sinon le bouton devient une image mais c'est un peu de la triche.
+           
             width: 5em;
             height: 2em;
             line-height: 2em;
@@ -241,9 +292,6 @@ $fk-grey: #7E7E7E;
             color: #008766;
             padding: 0.25em;
             font-size: large;
-
-            //En basse définition ?
-            //Définir un breakpoint avec "new" au lieu de "nouveau" ou bien une nouvelle disposition.
         }
 
         &__txt {
@@ -280,4 +328,149 @@ $fk-grey: #7E7E7E;
             }
         }
     }
+
+    &-checkbox {
+        font-size: xx-large;
+        align-self: center;
+        margin-right: 1em;
+
+        & input[type="checkbox"] {
+            display: none;
+    
+            &:checked ~ .restaurants-checkbox__icn {
+                display: none;
+            }
+            &:checked ~ .restaurants-checkbox__icn-fav {
+                display: inline;
+            }
+        }
+
+     &__icn {
+        cursor: pointer;
+            &-fav {
+                display: none;
+                background: -webkit-linear-gradient($nd-color, $prm-color);
+                // Essentiel pour coller au rendu qui suit la courbe !
+                background-clip: text;
+
+                // A mes yeux inutiles mais nécessaire pour le W3C + warning message.
+                color: transparent;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
 }
+
+.footer {
+    position: relative;
+    left: 1em;
+    
+    display: flex;
+    flex-direction: column;
+    @include core-mrg;
+
+    &__title {
+        font-family: 'Shrikhand', cursive;
+        font-weight: 400;
+        color: #FFF;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        &--grid {
+            display: grid;
+            grid-template-columns: 1fr 20fr;
+        }
+    }
+}
+
+/***************************************************
+            VERSION DESKTOP
+***************************************************/       
+
+@media screen and (min-width:769px) {
+
+    // Ici rentrerons toutes les "grandes classes" qui méritent une LIMITATION en cas de résolution trop grande.
+    // Plutôt que de l'appliquer au body, cela permet d'etendre facilement des background-color.
+    .instruction--margin {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    $rnd-icn-desk : 1.5em;
+
+    .header {
+        width: 100%;
+        &__logo {
+            padding: 2.5em;
+        }
+        &__location--txt {
+            font-size: x-large;
+            font-weight: 500;
+            padding: 0.3em 0;
+        }
+    }
+
+    .concept {
+        &__title {
+            margin-top: 1.5em;
+            font-weight: bolder;
+            font-size: 2.75em;
+            line-height: 1.5em;
+            width: 90%;
+        }
+        &__txt {
+            font-weight: lighter;
+            font-size: 1.25em;
+            width: 75%;
+        }
+    }
+
+    .instruction {
+        width: 100%;
+        &__steps {
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            &-unit {
+                width: 25%;
+                &--number {
+                    width: $rnd-icn-desk;
+                    height: $rnd-icn-desk;
+                    line-height: $rnd-icn-desk;
+                    min-height: $rnd-icn-desk;
+                    min-width: $rnd-icn-desk;
+                    right: 1.9em;
+                }
+
+                &--txt {
+                    font-size: large;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .restaurants {
+        //Pas sur que ce que je fasse soit légal sur ce coup là.
+        margin-right: -100%;
+        &__menu {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+
+#footerMenu {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    margin-left: 40px;
+    height: fit-content;
+}
+
