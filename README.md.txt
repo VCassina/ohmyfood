@@ -1,4 +1,4 @@
-19/01/2023 - Rélisation de la page d'accueil en HTLM/CSS.
+20/01/2023 - Rélisation de la page d'accueil en HTLM/CSS.
 
 Avancées :
 
