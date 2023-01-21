@@ -2,7 +2,7 @@ body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   margin: 0;
-  background-color: #D2D2D2;
+  background-color: rgba(210, 210, 210, 0.2);
 }
 
 header {
@@ -128,6 +128,7 @@ footer {
   font-size: xx-large;
 }
 .instruction__steps {
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 3.5em;
@@ -146,22 +147,28 @@ footer {
   padding: 1.75em;
   background: #F6F6F6;
 }
+.instruction__steps-unit:hover {
+  background-color: #F5EDFF;
+}
+.instruction__steps-unit:hover .instruction__steps-unit--icn {
+  color: #9356DC;
+}
 .instruction__steps-unit--number {
+  width: 1.75em;
+  height: 1.75em;
+  line-height: 1.75em;
+  min-width: 1.75em;
+  min-height: 1.75em;
+  position: relative;
+  right: 2em;
+  font-size: x-large;
   color: #FFF;
   background-color: #9356DC;
   border-radius: 100%;
   text-align: center;
-  width: 2em;
-  height: 2em;
-  line-height: 2em;
-  min-width: 2em;
-  min-height: 2em;
-  position: relative;
-  right: 2.2em;
-  font-size: x-large;
 }
 .instruction__steps-unit--txt {
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
   position: relative;
   right: 2.25em;
@@ -170,11 +177,9 @@ footer {
   color: #7E7E7E;
   font-size: xx-large;
   margin-right: 1em;
+  margin-left: 0.5em;
   position: relative;
   right: 1em;
-}
-.instruction__steps-unit--icn:hover {
-  color: #9356DC;
 }
 
 .restaurants {
@@ -190,7 +195,7 @@ footer {
   align-self: baseline;
 }
 .restaurants__menu {
-  width: 100%;
+  width: 80vw;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -216,7 +221,7 @@ footer {
 .restaurants-card__new {
   position: relative;
   bottom: 14em;
-  left: 75%;
+  left: 70%;
   width: 5em;
   height: 2em;
   line-height: 2em;
@@ -286,9 +291,8 @@ footer {
 .footer {
   position: relative;
   left: 1em;
-  display: flex;
-  flex-direction: column;
   margin: 0 2em;
+  margin: 1em 0 1em 1em;
 }
 .footer__title {
   font-family: "Shrikhand", cursive;
@@ -303,13 +307,14 @@ footer {
 .footer__content--grid {
   display: grid;
   grid-template-columns: 1fr 20fr;
+  gap: 0.5em;
 }
 
 /***************************************************
             VERSION DESKTOP
 ***************************************************/
 @media screen and (min-width: 769px) {
-  .instruction--margin {
+  .instruction--margin, .restaurants--margin, .footer--margin {
     max-width: 1400px;
     margin: 0 auto;
   }
@@ -318,11 +323,6 @@ footer {
   }
   .header__logo {
     padding: 2.5em;
-  }
-  .header__location--txt {
-    font-size: x-large;
-    font-weight: 500;
-    padding: 0.3em 0;
   }
   .concept__title {
     margin-top: 1.5em;
@@ -337,15 +337,18 @@ footer {
     width: 75%;
   }
   .instruction {
-    width: 100%;
+    width: auto;
   }
   .instruction__steps {
-    justify-content: center;
+    width: auto;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .instruction__steps-unit {
+    min-width: 15em;
     width: 25%;
+    padding: 1em;
   }
   .instruction__steps-unit--number {
     width: 1.5em;
@@ -353,26 +356,47 @@ footer {
     line-height: 1.5em;
     min-height: 1.5em;
     min-width: 1.5em;
-    right: 1.9em;
+    right: 1.5em;
+  }
+  .instruction__steps-unit--icn {
+    padding-left: 0.25em;
   }
   .instruction__steps-unit--txt {
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
   }
   .restaurants {
-    margin-right: -100%;
+    align-items: baseline;
   }
   .restaurants__menu {
     display: flex;
     flex-direction: row;
+    width: 120em;
   }
-}
-#footerMenu {
-  flex-direction: column;
-  width: 100%;
-  gap: 20px;
-  margin-left: 40px;
-  height: fit-content;
+  .restaurants-card {
+    overflow: visible;
+    width: 100%;
+  }
+  .footer {
+    max-width: 92.5vw;
+  }
+  .footer--margin {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 5em;
+    width: 100%;
+  }
+  .footer__content {
+    flex-direction: row;
+    gap: 2em;
+  }
+  .footer__content--grid {
+    display: inline;
+  }
+  .footer__content--icn {
+    margin-right: 0.2em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

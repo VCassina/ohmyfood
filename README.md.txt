@@ -2,22 +2,11 @@
 
 Avancées :
 
-- Amélioration de la responsivité du header/foot.
-- Création d'un média queries Desktop.
-- Etape 2 terminée à un soucis près (voir "Problème non résolus" ci-dessous).
-- Code couleur background-color appliqué ! Je ne l'avais pas "remarqué" avant à cause de mes yeux... Merci Lisa.
-
-- Instauration d'un media queries Desktop {
-	- Général -> Margin importante SAUF footer / menu des restaurants ! C'est moche mais apparement c'est comme ça.
-	- "Réservez le menu qui vous convient" est bien plus gros !
-	- Les étapes sont désormais en flex row.
-
-A poursuivre demain : 
-
-	- Liste des menus en flex row + menu déroulant.
+	- Redimensionnement d'éléments qui a conduit à une amélioration de la responsivité (site fonctionnel de 440px à ∞).
+	- Amélioration code couleur et refonte du hover qui était innaproprié.
+	- Le menu Restaurants est désormais un flex row en desktop et dépasse vers la droite.
+			- Le scroll n'est pas encore correctement géré !
 	- Footer en flex row, column reserve, partant de la droite.
-
-
 
 
 Problème non résolus / à voir :
@@ -33,5 +22,5 @@ Problème non résolus / à voir :
 	-> Cela demande de tout repenser, d'abord trouver une répartition grid pour tout reparamétrer.
 		-> Les premiers essaies dans ce sens déforment les boutons, le rendu est laid.
 - Doute sur l'utilisation d'un margin-right: -100%; sur le menu .restaurants (L.450 environ).
-
+- La liste des menus ne scroll pas en desktop ! Pourquoi ?
 
