@@ -18,7 +18,7 @@ A suivre :
 - Relire le code pour en retirer le superflu / retenir l'essentiel.
 - Confirmer le validateur W3C.
 
--> Une fois les trois points du dessus validés, passer au page des menu en CSS.
+-> Une fois les points du dessus validés, passer au page des menu en CSS.
 -> Ne pas oublier de commit les changements de la page d'accueil sur le main.
 
 
