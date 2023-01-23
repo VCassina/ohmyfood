@@ -1,0 +1,26 @@
+
+@mixin usualy-title {
+    font-size: xx-large;
+}
+
+@mixin core-mrg {
+    margin: 0 2em;
+}
+
+@mixin instruction-nmb {
+    width: $rnd-icn;
+    height: $rnd-icn;
+    line-height: $rnd-icn;
+
+    // Evite la déformation en cas de très basse résolution.
+    min-width: $rnd-icn;
+    min-height: $rnd-icn;
+
+    position: relative;
+    right: 2em;
+    font-size: x-large;
+}
+
+@mixin txt-mng {
+    
+}

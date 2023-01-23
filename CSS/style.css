@@ -1,0 +1,426 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  background-color: rgba(210, 210, 210, 0.2);
+}
+
+a {
+  text-decoration: none;
+}
+
+/***************************************************
+            VERSION DESKTOP
+***************************************************/
+@media screen and (min-width: 769px) {
+  .instruction--margin, .restaurants--margin, .footer--margin {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+@font-face {
+  font-family: "Revalia";
+  src: url(http://fonts.googleapis.com/css?family=Revalia);
+}
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2em;
+  background-color: #FFFFFF;
+}
+.header__logo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1.5em;
+  box-shadow: 0px 5px 5px #D2D2D2;
+  z-index: 1;
+  justify-content: center;
+}
+.header__logo-img {
+  width: 18em;
+}
+.header__location {
+  width: 105%;
+  background-color: #EAEAEA;
+  color: #353535;
+  font-style: normal;
+}
+.header__location > span {
+  justify-content: center;
+  font-size: x-large;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75em;
+}
+@media screen and (min-width: 769px) {
+  .header {
+    width: 100%;
+  }
+  .header__logo {
+    padding: 2.5em;
+  }
+}
+
+.concept {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2em 0;
+  margin-top: 10em;
+  width: 100%;
+}
+.concept__title {
+  font-size: xx-large;
+  line-height: 1.25em;
+  width: 70%;
+  margin-bottom: 1em;
+}
+.concept__txt {
+  font-size: x-large;
+  font-weight: lighter;
+  line-height: 1.5em;
+  color: #353535;
+  position: relative;
+  bottom: 30px;
+  width: 85%;
+}
+.concept__button {
+  text-decoration: none;
+  align-self: center;
+  border-radius: 5em;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  width: fit-content;
+  height: fit-content;
+  padding: 1.5em 2em;
+  position: relative;
+  bottom: 15px;
+  display: block;
+}
+.concept__button-txt {
+  color: #FFF;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+}
+@media screen and (min-width: 769px) {
+  .concept__title {
+    margin-top: 1.5em;
+    font-weight: bolder;
+    font-size: 2.75em;
+    line-height: 1.5em;
+    width: 90%;
+  }
+  .concept__txt {
+    font-weight: lighter;
+    font-size: 1.25em;
+    width: 75%;
+  }
+}
+
+.instruction {
+  margin: 2em 0;
+  padding: 0 2em 4em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #FFF;
+}
+.instruction__title {
+  margin-top: 2em;
+  font-size: xx-large;
+}
+.instruction__steps {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5em;
+  align-items: center;
+}
+.instruction__steps-unit {
+  display: grid;
+  grid-template-columns: 1fr 1fr 8fr;
+  width: 80%;
+  background-color: #F7F7F7;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 2em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75em;
+  background: #F6F6F6;
+}
+.instruction__steps-unit:hover {
+  background-color: #F5EDFF;
+}
+.instruction__steps-unit:hover .instruction__steps-unit--icn {
+  color: #9356DC;
+}
+.instruction__steps-unit--number {
+  width: 1.75em;
+  height: 1.75em;
+  line-height: 1.75em;
+  min-width: 1.75em;
+  min-height: 1.75em;
+  position: relative;
+  right: 2em;
+  font-size: x-large;
+  color: #FFF;
+  background-color: #9356DC;
+  border-radius: 100%;
+  text-align: center;
+}
+.instruction__steps-unit--txt {
+  font-size: large;
+  font-weight: bold;
+  position: relative;
+  right: 2.25em;
+}
+.instruction__steps-unit--icn {
+  color: #7E7E7E;
+  font-size: xx-large;
+  margin-right: 1em;
+  margin-left: 0.5em;
+  position: relative;
+  right: 1em;
+}
+@media screen and (min-width: 769px) {
+  .instruction {
+    width: auto;
+  }
+  .instruction__steps {
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .instruction__steps-unit {
+    min-width: 15em;
+    width: 25%;
+    padding: 1em;
+  }
+  .instruction__steps-unit--number {
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    min-height: 1.5em;
+    min-width: 1.5em;
+    right: 1.5em;
+  }
+  .instruction__steps-unit--icn {
+    padding-left: 0.25em;
+  }
+  .instruction__steps-unit--txt {
+    font-size: medium;
+    font-weight: bold;
+  }
+}
+
+.restaurants {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+}
+.restaurants__title {
+  font-size: xx-large;
+  align-self: baseline;
+}
+.restaurants__menu {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 4em;
+}
+.restaurants__menu, .restaurants__menu a {
+  text-decoration: none;
+  color: #000;
+}
+.restaurants-card {
+  position: relative;
+  height: 22em;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #FFF;
+}
+.restaurants-card:hover {
+  background-color: rgba(234, 234, 234, 0.5);
+}
+.restaurants-card__frame {
+  min-width: 100%;
+  height: 16em;
+  overflow: hidden;
+}
+.restaurants-card__frame--picture {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.restaurants-card__new {
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+  width: fit-content;
+  padding: 0.4em;
+  line-height: 2em;
+  text-align: center;
+  justify-content: center;
+  background: #99E2D0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  color: #008766;
+  font-size: large;
+}
+.restaurants-card__txt {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.restaurants-card__txt--content {
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  line-height: 0em;
+}
+.restaurants-card__txt--name {
+  font-size: x-large;
+}
+.restaurants-card__txt--undername {
+  font-size: larger;
+}
+.restaurants-card__txt--icn {
+  align-self: center;
+  font-size: xx-large;
+  margin-right: 1em;
+  overflow: hidden;
+}
+@media screen and (max-width: 380px) {
+  .restaurants-card__txt--name {
+    font-size: larger;
+    margin-top: 1.5em;
+  }
+  .restaurants-card__txt--undername {
+    font-size: large;
+  }
+}
+.restaurants-card > a {
+  color: #000;
+  background-color: #000;
+}
+.restaurants-checkbox {
+  font-size: xx-large;
+  align-self: center;
+  margin-right: 1em;
+  z-index: 1;
+}
+.restaurants-checkbox input[type=checkbox] {
+  display: none;
+}
+.restaurants-checkbox input[type=checkbox]:checked ~ .restaurants-checkbox__icn {
+  display: none;
+}
+.restaurants-checkbox input[type=checkbox]:checked ~ .restaurants-checkbox__icn-fav {
+  display: inline;
+}
+.restaurants-checkbox__icn {
+  cursor: pointer;
+}
+.restaurants-checkbox__icn-fav {
+  display: none;
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 769px) {
+  .restaurants {
+    align-items: baseline;
+  }
+  .restaurants__menu {
+    display: flex;
+    flex-direction: row;
+    width: 120em;
+  }
+  .restaurants-card {
+    overflow: visible;
+    width: 100%;
+  }
+}
+
+.footer {
+  position: relative;
+  left: 1em;
+  margin: 0 2em;
+  margin: 1em 0 1em 1em;
+}
+.footer__title {
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  color: #FFF;
+}
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.footer__content--grid {
+  display: grid;
+  grid-template-columns: 1fr 20fr;
+  gap: 5px;
+}
+@media screen and (min-width: 769px) {
+  .footer {
+    max-width: 92.5vw;
+  }
+  .footer--margin {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 5em;
+    width: 100%;
+  }
+  .footer__content {
+    flex-direction: row;
+    gap: 2em;
+  }
+  .footer__content--grid {
+    display: inline;
+  }
+  .footer__content--icn {
+    margin-right: 0.2em;
+  }
+}
+
+footer {
+  margin-top: 5em;
+  padding-bottom: 1em;
+  background-color: #353535;
+  position: absolute;
+  left: 0;
+  width: 105%;
+}
+footer, footer a {
+  color: #FFF;
+}
+
+/*# sourceMappingURL=style.css.map */
