@@ -1,6 +1,5 @@
 body {
     overflow-x: hidden;
-    margin: 0;
     background-color: rgba(210, 210, 210, 0.2);
 }
 
@@ -14,8 +13,7 @@ a {
 
 @media screen and (min-width:769px) {
 
-    // Ici rentrerons toutes les "grandes classes" qui méritent une LIMITATION en cas de résolution trop grande.
-    // Plutôt que de l'appliquer au body, cela permet d'etendre facilement des background-color (entre autre).
+    // Grandes classes qui seront dépendantes d'un max-widht.
     .instruction--margin, .restaurants--margin, .footer--margin {
         max-width: 1400px;
         margin: 0 auto;

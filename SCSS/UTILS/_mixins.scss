@@ -4,23 +4,19 @@
 }
 
 @mixin core-mrg {
-    margin: 0 2em;
+    margin: 0 3em;
 }
 
 @mixin instruction-nmb {
-    width: $rnd-icn;
-    height: $rnd-icn;
-    line-height: $rnd-icn;
+    width: $round-icn;
+    height: $round-icn;
+    line-height: $round-icn;
 
     // Evite la déformation en cas de très basse résolution.
-    min-width: $rnd-icn;
-    min-height: $rnd-icn;
+    min-width: $round-icn;
+    min-height: $round-icn;
 
     position: relative;
     right: 2em;
     font-size: x-large;
-}
-
-@mixin txt-mng {
-    
 }

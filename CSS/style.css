@@ -1,6 +1,5 @@
 body {
   overflow-x: hidden;
-  margin: 0;
   background-color: rgba(210, 210, 210, 0.2);
 }
 
@@ -36,7 +35,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 2em;
   background-color: #FFFFFF;
 }
 .header__logo {
@@ -52,12 +50,14 @@ header {
   width: 18em;
 }
 .header__location {
-  width: 105%;
+  width: 100vw;
   background-color: #EAEAEA;
   color: #353535;
-  font-style: normal;
 }
-.header__location > span {
+.header__location--txt {
+  padding: 0.75em 0;
+}
+.header__location, .header__location span {
   justify-content: center;
   font-size: x-large;
   align-items: center;
@@ -66,33 +66,25 @@ header {
   gap: 0.75em;
 }
 @media screen and (min-width: 769px) {
-  .header {
-    width: 100%;
-  }
   .header__logo {
     padding: 2.5em;
   }
 }
 
 .concept {
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 2em 0;
   margin-top: 10em;
-  width: 100%;
 }
 .concept__title {
-  font-size: xx-large;
-  line-height: 1.25em;
   width: 70%;
-  margin-bottom: 1em;
+  font-size: xx-large;
 }
 .concept__txt {
   font-size: x-large;
-  font-weight: lighter;
   line-height: 1.5em;
   color: #353535;
   position: relative;
@@ -100,22 +92,14 @@ header {
   width: 85%;
 }
 .concept__button {
-  text-decoration: none;
-  align-self: center;
   border-radius: 5em;
   background: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
-  width: fit-content;
-  height: fit-content;
-  padding: 1.5em 2em;
+  padding: 1em 1.5em;
   position: relative;
-  bottom: 15px;
-  display: block;
-}
-.concept__button-txt {
+  bottom: 10px;
   color: #FFF;
   font-size: 20px;
-  line-height: 20px;
   font-weight: bold;
 }
 @media screen and (min-width: 769px) {
@@ -135,18 +119,17 @@ header {
 
 .instruction {
   margin: 2em 0;
-  padding: 0 2em 4em;
+  padding: 4em 3em 8em;
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: #FFF;
 }
 .instruction__title {
-  margin-top: 2em;
   font-size: xx-large;
 }
 .instruction__steps {
-  width: 85%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 3.5em;
@@ -183,7 +166,6 @@ header {
   color: #FFF;
   background-color: #9356DC;
   border-radius: 100%;
-  text-align: center;
 }
 .instruction__steps-unit--txt {
   font-size: large;
@@ -210,9 +192,9 @@ header {
     justify-content: center;
   }
   .instruction__steps-unit {
-    min-width: 15em;
+    min-width: 16em;
     width: 25%;
-    padding: 1em;
+    padding: 1.25em;
   }
   .instruction__steps-unit--number {
     width: 1.5em;
@@ -226,74 +208,70 @@ header {
     padding-left: 0.25em;
   }
   .instruction__steps-unit--txt {
-    font-size: medium;
+    font-size: large;
     font-weight: bold;
+  }
+}
+@media screen and (min-width: 1096px) {
+  .instruction__steps-unit--txt {
+    font-size: medium;
   }
 }
 
 .restaurants {
-  margin: 0 2em;
+  margin: 0 3em;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 4em;
+}
+@media screen and (max-width: 340px) {
+  .restaurants {
+    margin: 0 2em 0 3em;
+  }
 }
 .restaurants__title {
   font-size: xx-large;
-  align-self: baseline;
 }
 .restaurants__menu {
-  width: 80vw;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
   gap: 4em;
 }
 .restaurants__menu, .restaurants__menu a {
-  text-decoration: none;
   color: #000;
 }
 .restaurants-card {
   position: relative;
-  height: 22em;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
-  overflow: hidden;
   background-color: #FFF;
 }
 .restaurants-card:hover {
   background-color: rgba(234, 234, 234, 0.5);
 }
 .restaurants-card__frame {
-  min-width: 100%;
   height: 16em;
-  overflow: hidden;
 }
 .restaurants-card__frame--picture {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
+.restaurants-card__low-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .restaurants-card__new {
   position: absolute;
-  top: 1rem;
-  right: 0.75rem;
-  width: fit-content;
-  padding: 0.4em;
-  line-height: 2em;
-  text-align: center;
-  justify-content: center;
+  top: 1em;
+  right: 0.75em;
+  padding: 0.5em;
   background: #99E2D0;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
   border-radius: 2px;
   color: #008766;
   font-size: large;
-}
-.restaurants-card__txt {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
 }
 .restaurants-card__txt--content {
   margin-left: 1em;
@@ -305,15 +283,12 @@ header {
   font-size: x-large;
 }
 .restaurants-card__txt--undername {
-  font-size: larger;
-}
-.restaurants-card__txt--icn {
-  align-self: center;
-  font-size: xx-large;
-  margin-right: 1em;
-  overflow: hidden;
+  font-size: large;
 }
 @media screen and (max-width: 380px) {
+  .restaurants-card__txt--content {
+    margin-left: 0.5em;
+  }
   .restaurants-card__txt--name {
     font-size: larger;
     margin-top: 1.5em;
@@ -322,14 +297,10 @@ header {
     font-size: large;
   }
 }
-.restaurants-card > a {
-  color: #000;
-  background-color: #000;
-}
 .restaurants-checkbox {
   font-size: xx-large;
   align-self: center;
-  margin-right: 1em;
+  margin-right: 0.5em;
   z-index: 1;
 }
 .restaurants-checkbox input[type=checkbox] {
@@ -358,20 +329,15 @@ header {
   }
   .restaurants__menu {
     display: flex;
-    flex-direction: row;
     width: 120em;
   }
   .restaurants-card {
-    overflow: visible;
     width: 100%;
   }
 }
 
 .footer {
-  position: relative;
-  left: 1em;
-  margin: 0 2em;
-  margin: 1em 0 1em 1em;
+  margin: 0 3em;
 }
 .footer__title {
   font-family: "Shrikhand", cursive;
@@ -412,12 +378,9 @@ header {
 }
 
 footer {
-  margin-top: 5em;
-  padding-bottom: 1em;
+  margin-top: 4em;
+  padding: 1em 0 3em;
   background-color: #353535;
-  position: absolute;
-  left: 0;
-  width: 105%;
 }
 footer, footer a {
   color: #FFF;

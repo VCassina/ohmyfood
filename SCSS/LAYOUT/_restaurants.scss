@@ -3,34 +3,30 @@
     @include core-mrg;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 4em;
 
+    @media screen and (max-width: 340px) {
+        margin: 0 2em 0 3em;
+    }
 
     &__title {
         @include usualy-title;
-        align-self: baseline;
     }
 
     &__menu {
-        //width: 80vw;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
         gap: 4em;
 
         &, a {
-        //    text-decoration: none;
             color: #000;
         }
     }
 
     &-card {
-        position: relative;
-        //height: 22em;
+        position: relative; // Pour les badges "nouveau".
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
-        //overflow: hidden;
         background-color: #FFF;
 
         &:hover{
@@ -38,10 +34,8 @@
         }
     
         &__frame {
-            //min-width: 100%;
             height: 16em;
-            //overflow: hidden;
-
+            
             &--picture {
                 object-fit: cover;
                 width: 100%;
@@ -49,28 +43,25 @@
             }
         }
 
+        &__low-content {
+            display: flex;
+            flex-direction:row;
+            justify-content: space-between;
+        }
+
         &__new {
-            // Combiné au position: relative; du parent, il permet de tracker parfaitement la position voulue.
-            position: absolute;
-            top: 1rem;
-            right: 0.75rem;
-            //width: fit-content;
-            padding: 0.40em;
-            //line-height: 2em;
-            //text-align: center;
-            //justify-content: center;
+            position: absolute; // Combiné au relative du parent, tracker parfait.
+            top: 1em;
+            right: 0.75em;
+            padding: 0.5em;
             background: #99E2D0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.30);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
             border-radius: 2px;
             color: #008766;
             font-size: large;
         }
 
         &__txt {
-            display: flex;
-            flex-direction:row;
-           // width: 100%;
-            justify-content: space-between;
 
             &--content {
                 margin-left: 1em;
@@ -84,17 +75,15 @@
             }
 
             &--undername {
-                font-size: larger;
+                font-size: large;
             }
 
-            // &--icn {
-            //     align-self: center;
-            //     font-size: xx-large;
-            //     margin-right: 1em;
-            //     overflow: hidden;
-            // }
-
             @media screen and (max-width: 380px) {
+
+                &--content {
+                    margin-left: 0.5em;
+                }
+
                 &--name {
                     font-size: larger;
                     margin-top: 1.5em;
@@ -105,20 +94,13 @@
                 } 
             }
         }
-
-        & > a {
-            color: #000;
-            background-color: #000;
-        }
     }
 
     &-checkbox {
         font-size: xx-large;
         align-self: center;
-        margin-right: 1em;
-
-        // Nécessaire pour être clickable par dessus la card clickable également.
-        z-index: 1;
+        margin-right: 0.5em;
+        z-index: 1; // Nécessaire pour être clickable par dessus la card clickable également.
 
         & input[type="checkbox"] {
             display: none;
@@ -135,12 +117,9 @@
         cursor: pointer;
             &-fav {
                 display: none;
-                background: -webkit-linear-gradient($nd-color, $prm-color);
-                // Essentiel pour coller au rendu qui suit la courbe !
-                background-clip: text;
-
-                // A mes yeux inutiles mais nécessaire pour le W3C + warning message.
-                color: transparent;
+                background: -webkit-linear-gradient($second-color, $primary-color);
+                background-clip: text; // Essentiel pour coller au rendu qui suit la courbe !
+                color: transparent; // A mes yeux inutiles mais nécessaire pour le W3C + warning message.
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -152,14 +131,10 @@
 
         &__menu {
             display: flex;
-            flex-direction: row;
-            //"vw" est ici une valeur relative à la fenêtre d'affichage, cela permet d'afficher 100% de la page sur la droite (car mélangé à "align-items: baseline de son parent).
-            // Ainsi, on doit scroll pour voir ce qui est à droite, comme demandé.
             width: 120em;
         }
 
         &-card {
-            overflow: visible;
             width: 100%;
         }
     }
