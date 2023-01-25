@@ -1,6 +1,7 @@
 body {
   overflow-x: hidden;
   background-color: rgba(210, 210, 210, 0.2);
+  margin: 0;
 }
 
 a {
@@ -13,7 +14,7 @@ a {
 @media screen and (min-width: 769px) {
   .instruction--margin, .restaurants--margin, .footer--margin {
     max-width: 1400px;
-    margin: 0 auto;
+    margin: auto;
   }
 }
 body {
@@ -24,11 +25,58 @@ body {
   font-family: "Revalia";
   src: url(http://fonts.googleapis.com/css?family=Revalia);
 }
+.button__gradient {
+  border-radius: 5em;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  padding: 1em 1.5em;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+}
+@media screen and (min-width: 769px) {
+  .button__gradient {
+    font-weight: lighter;
+  }
+}
+
+.fav-checkbox {
+  font-size: xx-large;
+  align-self: center;
+  margin-right: 0.5em;
+  z-index: 1;
+}
+.fav-checkbox input[type=checkbox] {
+  display: none;
+}
+.fav-checkbox input[type=checkbox]:checked ~ .fav-checkbox__icn {
+  display: none;
+}
+.fav-checkbox input[type=checkbox]:checked ~ .fav-checkbox__icn-fav {
+  display: inline;
+}
+.fav-checkbox__icn {
+  cursor: pointer;
+}
+.fav-checkbox__icn-fav {
+  display: none;
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.resume-picture--img {
+  width: 100%;
+  height: auto;
+}
+
 header {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 100%;
+  left: 0;
+  width: 100vw;
 }
 
 .header {
@@ -65,9 +113,29 @@ header {
   flex-direction: row;
   gap: 0.75em;
 }
+.header__return {
+  position: absolute;
+  left: 2em;
+  align-self: center;
+}
+.header__return--icn {
+  color: #353535;
+  font-size: xx-large;
+}
 @media screen and (min-width: 769px) {
   .header__logo {
     padding: 2.5em;
+  }
+}
+@media screen and (max-width: 459px) {
+  .header__logo-img {
+    width: 65%;
+  }
+  .header__return {
+    left: 1em;
+  }
+  .header__return--icn {
+    font-size: 2.8ch;
   }
 }
 
@@ -76,7 +144,7 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2em 0;
+  padding: 2em 0 4em;
   margin-top: 10em;
 }
 .concept__title {
@@ -90,17 +158,6 @@ header {
   position: relative;
   bottom: 30px;
   width: 85%;
-}
-.concept__button {
-  border-radius: 5em;
-  background: linear-gradient(#FF79DA, #9356DC);
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
-  padding: 1em 1.5em;
-  position: relative;
-  bottom: 10px;
-  color: #FFF;
-  font-size: 20px;
-  font-weight: bold;
 }
 @media screen and (min-width: 769px) {
   .concept__title {
@@ -118,8 +175,8 @@ header {
 }
 
 .instruction {
-  margin: 2em 0;
-  padding: 4em 3em 8em;
+  margin: 0em 0 2em 0;
+  padding: 2em 3em 6em;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -219,9 +276,11 @@ header {
 }
 
 .restaurants {
-  margin: 0 3em;
+  margin: 0 2em;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4em;
+  padding-bottom: 2em;
 }
 @media screen and (max-width: 340px) {
   .restaurants {
@@ -297,32 +356,6 @@ header {
     font-size: large;
   }
 }
-.restaurants-checkbox {
-  font-size: xx-large;
-  align-self: center;
-  margin-right: 0.5em;
-  z-index: 1;
-}
-.restaurants-checkbox input[type=checkbox] {
-  display: none;
-}
-.restaurants-checkbox input[type=checkbox]:checked ~ .restaurants-checkbox__icn {
-  display: none;
-}
-.restaurants-checkbox input[type=checkbox]:checked ~ .restaurants-checkbox__icn-fav {
-  display: inline;
-}
-.restaurants-checkbox__icn {
-  cursor: pointer;
-}
-.restaurants-checkbox__icn-fav {
-  display: none;
-  background: -webkit-linear-gradient(#FF79DA, #9356DC);
-  background-clip: text;
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 @media screen and (min-width: 769px) {
   .restaurants {
     align-items: baseline;
@@ -337,7 +370,7 @@ header {
 }
 
 .footer {
-  margin: 0 3em;
+  margin: 0 2em;
 }
 .footer__title {
   font-family: "Shrikhand", cursive;
@@ -378,12 +411,100 @@ header {
 }
 
 footer {
-  margin-top: 4em;
-  padding: 1em 0 3em;
+  padding: 1em 0 2.5em;
   background-color: #353535;
 }
 footer, footer a {
   color: #FFF;
+}
+
+.menu {
+  position: relative;
+  bottom: 2em;
+  background-color: #F7F7F7;
+  border-radius: 40px 40px 0px 0px;
+  padding: 1em;
+}
+.menu__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em 0;
+}
+.menu__title > span {
+  font-family: "Shrikhand", cursive;
+  font-size: 3ch;
+}
+.menu__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-bottom: 4em;
+}
+.menu__content--title {
+  position: relative;
+  padding: 0.5em 0;
+  margin: 1.5em 0;
+}
+.menu__content--title::after {
+  position: absolute;
+  width: 40px;
+  content: "";
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  padding: 1em;
+  width: auto;
+  height: 3em;
+  background-color: #FFF;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 1.5em;
+}
+.menu-card--section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.menu-card__txt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  width: 80%;
+}
+.menu-card__txt--main {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: large;
+  font-weight: bold;
+}
+.menu-card__txt--sub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.menu-card__price {
+  font-size: large;
+  font-weight: bold;
+  color: #353535;
+  margin-right: 0.5em;
+}
+.menu__button {
+  text-align: center;
+  margin: 4em 0 1em 0;
+}
+.menu__button--adjust {
+  padding: 1em 4em;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,90 @@
+.menu {
+    position: relative;
+    bottom: 2em;
+    background-color: $fake-wdt;
+    border-radius: 40px 40px 0px 0px;
+    padding: 1em;
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1em 0;
+
+        & > span {
+            font-family: 'Shrikhand', cursive;
+            font-size: 3ch;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        margin-bottom: 4em;
+        &--title {
+            position: relative;
+            padding: 0.5em 0;
+            margin: 1.5em 0;
+            &::after {
+                position: absolute;
+                width: 40px;
+                content: "";
+                bottom: 0;
+                left: 0;
+                border-bottom: 3px solid $third-color;
+               }
+        }
+    }
+
+    &-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end; // Ramène le prix en bas de box.
+        padding: 1em;
+        width: auto;
+        height: 3em;
+        
+        background-color: #FFF;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 1.5em;
+
+        &--section {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        &__txt {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4em;
+            width: 80%;
+            
+            &--main {
+                @include single-line-txt;
+                font-size: large;
+                font-weight: bold;
+            }
+            &--sub {
+                @include single-line-txt;
+            }
+        }
+
+        &__price {
+            font-size: large;
+            font-weight: bold;
+            color: $txt-second-color;
+            margin-right: 0.5em;
+        }
+    }
+
+    &__button {
+        text-align: center;
+        margin: 4em 0 1em 0;
+        &--adjust {
+            padding: 1em 4em;
+        }
+    }
+}

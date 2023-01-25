@@ -1,10 +1,11 @@
-24/01/2023 - Rélisation de la page d'accueil en HTLM/CSS.
+25/01/2023 - Rélisation de la page d'accueil en HTLM/CSS.
 
 
 Avancées :
 
-- Relecture du code ( ≈ 30 lignes superflues et/ou caduques).
-- Confirmation du W3C HTML & CSS (Changements mineurs et REFONTE TOTALE du système de badge dans les cards).
-- Début d'élaboration des pages menu en HTML/CSS.
+- Commit sur la branche main de la branche page d'accueil CSS/HTML sans animation.
+- Avancement de création d'une page menu.
+- Transfert des checkbox et du bouton ("commander" / "Découvrez nos restaurants") dans COMPONENTS car réutilisés.
+- Relecture et réajustement du code pour un rendu fidèle aux attentes.
 
 

@@ -3,6 +3,8 @@
     @include core-mrg;
     display: flex;
     flex-direction: column;
+    margin-bottom: 4em;
+    padding-bottom: 2em;
 
     @media screen and (max-width: 340px) {
         margin: 0 2em 0 3em;
@@ -92,36 +94,6 @@
                 &--undername {
                     font-size: large;
                 } 
-            }
-        }
-    }
-
-    &-checkbox {
-        font-size: xx-large;
-        align-self: center;
-        margin-right: 0.5em;
-        z-index: 1; // Nécessaire pour être clickable par dessus la card clickable également.
-
-        & input[type="checkbox"] {
-            display: none;
-    
-            &:checked ~ .restaurants-checkbox__icn {
-                display: none;
-            }
-            &:checked ~ .restaurants-checkbox__icn-fav {
-                display: inline;
-            }
-        }
-
-     &__icn {
-        cursor: pointer;
-            &-fav {
-                display: none;
-                background: -webkit-linear-gradient($second-color, $primary-color);
-                background-clip: text; // Essentiel pour coller au rendu qui suit la courbe !
-                color: transparent; // A mes yeux inutiles mais nécessaire pour le W3C + warning message.
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
         }
     }
