@@ -1,0 +1,50 @@
+.footer {
+    @include core-pad;
+    
+    &__title {
+        font-family: 'Shrikhand', cursive;
+        font-weight: 400;
+        color: #FFF;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        &--grid {
+            display: grid;
+            grid-template-columns: 1fr 20fr;
+            gap: 5px;
+        }
+    }
+
+    @media screen and (min-width:769px) {
+
+        &--margin {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 5em;
+            width: 100%;
+        }
+        
+        &__content {
+            flex-direction: row;
+            gap: 2em;
+            &--grid {
+                display: inline;
+            }
+            &--icn {
+                margin-right: 0.2em;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #353535;
+
+    &, a {
+        color:#FFF;
+    }
+}

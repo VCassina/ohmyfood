@@ -1,0 +1,532 @@
+body {
+  overflow-x: hidden;
+  background-color: #FFF;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/***************************************************
+            VERSION DESKTOP
+***************************************************/
+@media screen and (min-width: 769px) {
+  .menu--margin, .instruction--margin, .restaurants--margin, .footer--margin {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+@font-face {
+  font-family: "Revalia";
+  src: url(http://fonts.googleapis.com/css?family=Revalia);
+}
+.button__gradient {
+  border-radius: 5em;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  padding: 1em 1.5em;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+}
+@media screen and (min-width: 769px) {
+  .button__gradient {
+    font-weight: lighter;
+  }
+}
+
+.fav-checkbox {
+  font-size: xx-large;
+  align-self: center;
+  margin-right: 0.5em;
+  z-index: 1;
+}
+.fav-checkbox input[type=checkbox] {
+  display: none;
+}
+.fav-checkbox input[type=checkbox]:checked ~ .fav-checkbox__icn {
+  display: none;
+}
+.fav-checkbox input[type=checkbox]:checked ~ .fav-checkbox__icn-fav {
+  display: inline;
+}
+.fav-checkbox__icn {
+  cursor: pointer;
+}
+.fav-checkbox__icn-fav {
+  display: none;
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.resume-picture {
+  position: relative;
+  top: 5em;
+  z-index: -1;
+  width: 100vw;
+  max-height: 40em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.resume-picture--img {
+  width: 100vw;
+  max-height: 40rem;
+  object-fit: cover;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+.header__logo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1.5em;
+  box-shadow: 0px 5px 5px #D2D2D2;
+  z-index: 1;
+  justify-content: center;
+}
+.header__logo-img {
+  width: 18em;
+}
+.header__location {
+  width: 100vw;
+  background-color: #EAEAEA;
+  color: #353535;
+}
+.header__location--txt {
+  padding: 1em 0;
+}
+.header__location, .header__location span {
+  justify-content: center;
+  font-size: x-large;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75em;
+}
+.header__return {
+  position: absolute;
+  left: 2em;
+  align-self: center;
+}
+.header__return--icn {
+  color: #353535;
+  font-size: xx-large;
+}
+@media screen and (min-width: 769px) {
+  .header__logo {
+    padding: 2.5em;
+  }
+}
+@media screen and (max-width: 459px) {
+  .header__logo-img {
+    width: 65%;
+  }
+  .header__return {
+    left: 1em;
+  }
+  .header__return--icn {
+    font-size: 2.8ch;
+  }
+}
+
+.concept {
+  padding: 3em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 10em;
+  background-color: #F7F7F7;
+}
+.concept__title {
+  width: 70%;
+  font-size: xx-large;
+}
+.concept__txt {
+  font-size: x-large;
+  line-height: 1.5em;
+  color: #353535;
+  position: relative;
+  bottom: 30px;
+  width: 85%;
+}
+@media screen and (min-width: 769px) {
+  .concept__title {
+    margin-top: 1.5em;
+    font-weight: bolder;
+    font-size: 2.75em;
+    line-height: 1.5em;
+    width: 90%;
+  }
+  .concept__txt {
+    font-weight: lighter;
+    font-size: 1.25em;
+    width: 75%;
+  }
+}
+
+.instruction {
+  padding: 3em 2em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.instruction__title {
+  font-size: xx-large;
+}
+.instruction__steps {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5em;
+  align-items: center;
+}
+.instruction__steps-unit {
+  display: grid;
+  grid-template-columns: 1fr 1fr 8fr;
+  width: 80%;
+  background-color: #F7F7F7;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 2em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75em;
+  background: #F6F6F6;
+}
+.instruction__steps-unit:hover {
+  background-color: #F5EDFF;
+}
+.instruction__steps-unit:hover .instruction__steps-unit--icn {
+  color: #9356DC;
+}
+.instruction__steps-unit--number {
+  width: 1.75em;
+  height: 1.75em;
+  line-height: 1.75em;
+  min-width: 1.75em;
+  min-height: 1.75em;
+  position: relative;
+  right: 2em;
+  font-size: x-large;
+  color: #FFF;
+  background-color: #9356DC;
+  border-radius: 100%;
+}
+.instruction__steps-unit--txt {
+  font-size: large;
+  font-weight: bold;
+  position: relative;
+  right: 2.25em;
+}
+.instruction__steps-unit--icn {
+  color: #7E7E7E;
+  font-size: xx-large;
+  margin-right: 1em;
+  margin-left: 0.5em;
+  position: relative;
+  right: 1em;
+}
+@media screen and (min-width: 769px) {
+  .instruction {
+    width: auto;
+  }
+  .instruction__steps {
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .instruction__steps-unit {
+    min-width: 16em;
+    width: 25%;
+    padding: 1.25em;
+  }
+  .instruction__steps-unit--number {
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    min-height: 1.5em;
+    min-width: 1.5em;
+    right: 1.5em;
+  }
+  .instruction__steps-unit--icn {
+    padding-left: 0.25em;
+  }
+  .instruction__steps-unit--txt {
+    font-size: large;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 1096px) {
+  .instruction__steps-unit--txt {
+    font-size: medium;
+  }
+}
+
+.restaurants {
+  padding: 3em 2em;
+  display: flex;
+  flex-direction: column;
+  background-color: #F7F7F7;
+}
+.restaurants__title {
+  font-size: xx-large;
+}
+.restaurants__menu {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
+  gap: 4em;
+}
+.restaurants__menu, .restaurants__menu a {
+  color: #000;
+}
+.restaurants-card {
+  position: relative;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 1em;
+  background-color: #FFF;
+  height: 22em;
+  overflow: hidden;
+}
+.restaurants-card:hover {
+  background-color: rgba(234, 234, 234, 0.5);
+}
+.restaurants-card__frame {
+  height: 16em;
+}
+.restaurants-card__frame--picture {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.restaurants-card__low-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.restaurants-card__new {
+  position: absolute;
+  top: 1em;
+  right: 0.75em;
+  padding: 0.5em;
+  background: #99E2D0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  color: #008766;
+  font-size: large;
+}
+.restaurants-card__txt--content {
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  line-height: 0em;
+}
+.restaurants-card__txt--name {
+  font-size: x-large;
+}
+.restaurants-card__txt--undername {
+  font-size: large;
+}
+@media screen and (max-width: 380px) {
+  .restaurants-card__txt--content {
+    margin-left: 0.5em;
+  }
+  .restaurants-card__txt--name {
+    font-size: larger;
+    margin-top: 1.5em;
+  }
+  .restaurants-card__txt--undername {
+    font-size: large;
+  }
+}
+@media screen and (min-width: 769px) {
+  .restaurants {
+    align-items: baseline;
+  }
+  .restaurants__menu {
+    display: flex;
+    width: 120em;
+  }
+  .restaurants-card {
+    width: 100%;
+  }
+}
+
+.footer {
+  padding: 3em 2em;
+}
+.footer__title {
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  color: #FFF;
+}
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.footer__content--grid {
+  display: grid;
+  grid-template-columns: 1fr 20fr;
+  gap: 5px;
+}
+@media screen and (min-width: 769px) {
+  .footer--margin {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 5em;
+    width: 100%;
+  }
+  .footer__content {
+    flex-direction: row;
+    gap: 2em;
+  }
+  .footer__content--grid {
+    display: inline;
+  }
+  .footer__content--icn {
+    margin-right: 0.2em;
+  }
+}
+
+footer {
+  background-color: #353535;
+}
+footer, footer a {
+  color: #FFF;
+}
+
+.menu {
+  padding: 3em 2em;
+  background-color: #F7F7F7;
+  border-radius: 2em 2em 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 769px) {
+  .menu {
+    padding: 2em 10% 4em;
+  }
+  .menu__title {
+    padding-top: 1em;
+  }
+  .menu .menu-card {
+    padding: 1em 3em 1em 1em;
+  }
+}
+.menu__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu__title > span {
+  font-family: "Shrikhand", cursive;
+  font-size: 3ch;
+  margin-right: 1em;
+}
+.menu__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2em;
+  margin-bottom: 4em;
+}
+.menu__content--title {
+  position: relative;
+  padding: 0.5em 0;
+  margin: 1em 0;
+}
+.menu__content--title::after {
+  position: absolute;
+  width: 40px;
+  content: "";
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu-card {
+  position: relative;
+  right: 0.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  padding: 1em 1em 1em 1em;
+  width: auto;
+  height: 3em;
+  background-color: #FFF;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 1.5em;
+}
+.menu-card--section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.menu-card__frame {
+  overflow: hidden;
+}
+.menu-card__txt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  width: 80%;
+}
+.menu-card__txt--main {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: large;
+  font-weight: bold;
+}
+.menu-card__txt--sub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.menu-card__price {
+  font-size: large;
+  font-weight: bold;
+  color: #353535;
+}
+.menu-card:hover {
+  background-color: #F5EDFF;
+}
+.menu__button {
+  position: relative;
+  text-align: center;
+  margin: 1em 0;
+}
+.menu__button--adjust {
+  padding: 1em 4em;
+}
+
+/*# sourceMappingURL=style.css.map */

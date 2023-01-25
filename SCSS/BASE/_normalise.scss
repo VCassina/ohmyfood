@@ -1,0 +1,24 @@
+body {
+    overflow-x: hidden;
+    //background-color: rgba(210, 210, 210, 0.2);
+    background-color: #FFF;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/***************************************************
+            VERSION DESKTOP
+***************************************************/ 
+
+@media screen and (min-width:769px) {
+
+    // Grandes classes qui seront dépendantes d'un max-widht.
+    // Recentre et limite l'expension en cas de forte résolution.
+    .menu--margin, .instruction--margin, .restaurants--margin, .footer--margin {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}

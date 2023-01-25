@@ -1,0 +1,30 @@
+
+@mixin usualy-title {
+    font-size: xx-large;
+}
+
+@mixin core-pad {
+    padding: 3em 2em;
+}
+
+@mixin instruction-nmb {
+    width: $round-icn;
+    height: $round-icn;
+    line-height: $round-icn;
+
+    // Evite la déformation en cas de très basse résolution.
+    min-width: $round-icn;
+    min-height: $round-icn;
+
+    position: relative;
+    right: 2em;
+    font-size: x-large;
+}
+
+@mixin single-line-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

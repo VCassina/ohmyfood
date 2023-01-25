@@ -1,0 +1,15 @@
+.resume-picture {
+    position: relative;
+    top: 5em;
+    z-index: -1;
+    width: 100vw;
+    max-height: 40em;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+    &--img {
+        width: 100vw;
+        max-height: 40rem;
+        object-fit: cover;
+    }
+}
