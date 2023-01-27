@@ -1,0 +1,101 @@
+
+.restaurants {
+    @include core-pad;
+    display: flex;
+    flex-direction: column;
+    background-color: $fake-wdt;
+
+    &__title {
+        @include usualy-title;
+        padding-bottom: 0.25em;
+    }
+
+    &__menu {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
+        gap: 4em;
+
+        &, a {
+            color: #000;
+        }
+    }
+
+    &-card {
+        position: relative; // Pour les badges "nouveau".
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+        border-radius: 1em;
+        background-color: #FFF;
+        height: 280px;
+        overflow: hidden;
+
+        &:hover{
+            background-color: rgba(234, 234, 234, 0.5);
+        }
+    
+        &__frame {
+            height: 200px;
+            
+            &--picture {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__low-content {
+            display: flex;
+            flex-direction:row;
+            justify-content: space-between;
+        }
+
+        &__new {
+            position: absolute; // Combiné au relative du parent, tracker parfait.
+            top: 0em;
+            right: 1em;
+            padding: 0.5em;
+            background: #99E2D0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+            border-radius: 2px;
+            color: #008766;
+            font-size: large;
+            width: 80px;
+            text-align: center;
+        }
+
+        &__txt {
+            padding: 0 18px 0 14px;
+            line-height: 5px;
+            
+            &--name {
+                font-size: x-large;
+            }
+
+            &--undername {
+                font-size: large;
+            }
+
+            @media screen and (max-width: 380px) {
+                padding: 0 10px 0 10px;
+
+                &--name {
+                    font-size: larger;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width:769px) {
+        align-items: baseline;
+
+        &__menu {
+            display: flex;
+            gap: 25px;
+            width: 120em;
+        }
+
+        &-card {
+            width: 100%;
+        }
+    }
+}
