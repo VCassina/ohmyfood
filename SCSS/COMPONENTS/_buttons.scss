@@ -1,0 +1,16 @@
+.button__gradient {
+    border-radius: 5em;
+    background: linear-gradient($second-color, $primary-color);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+    padding: 20px 20px; // Pixel perfect.
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+
+    &--txt {
+        display: inline-block;
+        width: 165px; // Pixel perfect.
+        height: 25px;
+        text-align: center;
+    }
+}
