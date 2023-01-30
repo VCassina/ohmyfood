@@ -3,9 +3,11 @@
 @import "BASE/_typography.scss";
 @import "UTILS/_variables.scss";
 @import "UTILS/_mixins.scss";
+@import "UTILS/_keyframes.scss";
 @import "COMPONENTS/_buttons.scss";
 @import "COMPONENTS/_checkbox.scss";
-@import "COMPONENTS/resume-picture.scss";
+@import "COMPONENTS/_resume-picture.scss";
+@import "COMPONENTS/_loader.scss";
 @import "LAYOUT/_header.scss";
 @import "LAYOUT/_concept.scss"; 
 @import "LAYOUT/_instruction.scss"; 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   overflow-x: hidden;
   background-color: #FFF;
@@ -29,6 +30,49 @@ body {
   font-family: "Revalia";
   src: url(http://fonts.googleapis.com/css?family=Revalia);
 }
+@keyframes bars {
+  0% {
+    transform: scaleY(0.75);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0;
+  }
+}
+@keyframes loader-stop {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes card-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .button__gradient {
   border-radius: 5em;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -37,6 +81,11 @@ body {
   color: #FFF;
   font-size: 16px;
   font-weight: bold;
+  transition: all 300ms;
+}
+.button__gradient:hover {
+  transform: scale(1.05);
+  background: linear-gradient(#ff83dd, #985ede);
 }
 .button__gradient--txt {
   display: inline-block;
@@ -50,6 +99,7 @@ body {
   align-self: center;
   margin-right: 0.5em;
   z-index: 1;
+  transition: all 300ms;
 }
 .fav-checkbox input[type=checkbox] {
   display: none;
@@ -59,6 +109,10 @@ body {
 }
 .fav-checkbox input[type=checkbox]:checked ~ .fav-checkbox__icn-fav {
   display: inline;
+  animation: fav 500ms linear forwards;
+}
+.fav-checkbox input[type=checkbox]:not(:checked) ~ .fav-checkbox__icn {
+  animation: fav 500ms linear backwards;
 }
 .fav-checkbox__icn {
   cursor: pointer;
@@ -70,6 +124,28 @@ body {
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.meal-checkbox {
+  display: flex;
+  width: 0;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  z-index: 1;
+  background-color: #99E2D0;
+  transition: all 300ms;
+  /* Le hover qui révèle .fa-circle-check n'est pas ici mais dans la card en question, c'est elle qu'il faut survoler dans ce but. */
+}
+.meal-checkbox input[type=checkbox] {
+  display: none;
+}
+.meal-checkbox .fa-circle-check {
+  display: none;
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 100%;
 }
 
 .resume-picture {
@@ -85,6 +161,78 @@ body {
   width: 100vw;
   max-height: 40rem;
   object-fit: cover;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  animation: loader-stop 1000ms 1500ms forwards;
+  z-index: 2;
+}
+
+.load {
+  position: fixed;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F7F7F7;
+  gap: 4vw;
+}
+.load--bottom {
+  top: 50%;
+}
+.load__bar {
+  background-color: #9356DC;
+  height: 70%;
+  width: 5vh;
+  animation: bars 600ms backwards infinite ease-in-out alternate;
+}
+.load__bar--1-inv {
+  background-color: #99E2D0;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+}
+.load__bar--2-inv {
+  background-color: #99E2D0;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+}
+.load__bar--3-inv {
+  background-color: #99E2D0;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+}
+.load__bar--4-inv {
+  background-color: #99E2D0;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+}
+.load__bar--5-inv {
+  background-color: #99E2D0;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+}
+
+.load__bar--1, .load__bar--1-inv {
+  animation-delay: 100ms;
+}
+
+.load__bar--2, .load__bar--2-inv {
+  animation-delay: 200ms;
+}
+
+.load__bar--3, .load__bar--3-inv {
+  animation-delay: 300ms;
+}
+
+.load__bar--4, .load__bar--4-inv {
+  animation-delay: 400ms;
+}
+
+.load__bar--5, .load__bar--5-inv {
+  animation-delay: 500ms;
 }
 
 header {
@@ -206,7 +354,7 @@ header {
   padding-bottom: 0.5em;
 }
 .instruction__steps {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -220,7 +368,6 @@ header {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 2em;
   text-align: center;
-  justify-content: center;
   align-items: center;
   padding: 25px 1.75em;
   background: #F6F6F6;
@@ -291,12 +438,9 @@ header {
     right: 2em;
   }
 }
-@media screen and (min-width: 1033px) {
+@media screen and (min-width: 1480px) {
   .instruction__steps {
     justify-content: flex-start;
-  }
-  .instruction__steps-unit--txt {
-    font-size: medium;
   }
 }
 
@@ -326,6 +470,11 @@ header {
   background-color: #FFF;
   height: 280px;
   overflow: hidden;
+  transition: all 300ms;
+}
+.restaurants-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
 .restaurants-card:hover {
   background-color: rgba(234, 234, 234, 0.5);
@@ -377,6 +526,7 @@ header {
 @media screen and (min-width: 769px) {
   .restaurants {
     align-items: baseline;
+    padding-bottom: 80px;
   }
   .restaurants__menu {
     display: flex;
@@ -409,6 +559,9 @@ header {
   gap: 5px;
 }
 @media screen and (min-width: 769px) {
+  .footer {
+    padding: 35px;
+  }
   .footer--margin {
     display: flex;
     flex-direction: row-reverse;
@@ -493,6 +646,20 @@ footer, footer a {
   background-color: #FFF;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 1.5em;
+  animation: card-reveal 500ms linear backwards;
+  overflow: hidden;
+}
+.menu-card--appear-1 {
+  animation-delay: 250ms;
+}
+.menu-card--appear-2 {
+  animation-delay: 500ms;
+}
+.menu-card--appear-3 {
+  animation-delay: 750ms;
+}
+.menu-card--appear-4 {
+  animation-delay: 1000ms;
 }
 .menu-card--section {
   display: flex;
@@ -528,9 +695,26 @@ footer, footer a {
   font-size: large;
   font-weight: bold;
   color: #353535;
+  transition: 300ms;
+}
+.menu-card__txt--checkbox {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 80px;
 }
 .menu-card:hover {
   background-color: #F5EDFF;
+}
+.menu-card:hover .fa-circle-check {
+  display: inline;
+}
+.menu-card:hover .menu-card__txt--checkbox {
+  width: 70px;
+}
+.menu-card:hover .menu-card__txt--price {
+  transition: 300ms;
+  margin-right: 70px;
 }
 @media screen and (min-width: 769px) {
   .menu {

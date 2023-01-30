@@ -54,7 +54,6 @@
     &-card {
         position: relative;
         right: 0.25em;
-
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -64,6 +63,14 @@
         background-color: #FFF;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
         border-radius: 1.5em;
+        animation: card-reveal 500ms linear backwards;
+        overflow: hidden;
+
+        @for $i from 1 through 4 { // Pour chaque itération de 1 à 4.
+            &--appear-#{$i} {      // Fait "menu-card--appear-$i" avoir du delay de 250ms * le numéro d'itération. 
+            animation-delay: calc(250ms*$i);
+            }
+        }
 
         &--section {
             display: flex;
@@ -94,12 +101,34 @@
                 font-size: large;
                 font-weight: bold;
                 color: $txt-second-color;
+                transition: $global-time-trans; // Necessaire pour le retour, une fois unhover.
             }
-        }
+
+            &--checkbox {
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                height: 80px
+            }  
+        }   
 
         &:hover {
             background-color: #F5EDFF;
-        }
+            .fa-circle-check {
+                display: inline;
+            }
+            .menu-card__txt {
+
+                &--checkbox {
+                    width: 70px;
+                }
+
+                &--price {
+                    transition: $global-time-trans;
+                    margin-right: 70px;
+                }
+            }
+        }   
     }
     
     @media screen and (min-width:769px) {
@@ -120,3 +149,4 @@
         }
     }
 }
+

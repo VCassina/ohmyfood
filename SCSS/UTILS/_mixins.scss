@@ -28,3 +28,18 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
+
+@mixin lighten-scaling {
+    &:hover {
+    transform: scale($global-scale-trans);
+    background: linear-gradient(lighten($second-color, 2), lighten($primary-color, 2));
+    
+    }
+}
+
+@mixin shadow-scaling {
+    &:hover {
+    transform: scale($global-scale-trans);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+}
