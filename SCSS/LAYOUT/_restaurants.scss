@@ -29,6 +29,9 @@
         height: 280px;
         overflow: hidden;
 
+        transition: all $global-time-trans;
+        @include shadow-scaling;
+
         &:hover{
             background-color: rgba(234, 234, 234, 0.5);
         }
@@ -87,6 +90,7 @@
 
     @media screen and (min-width:769px) {
         align-items: baseline;
+        padding-bottom: 80px; // Pixel perfect.
 
         &__menu {
             display: flex;

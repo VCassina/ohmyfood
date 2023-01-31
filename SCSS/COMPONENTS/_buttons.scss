@@ -1,3 +1,4 @@
+
 .button__gradient {
     border-radius: 5em;
     background: linear-gradient($second-color, $primary-color);
@@ -6,6 +7,9 @@
     color: #FFF;
     font-size: 16px;
     font-weight: bold;
+
+    transition: all $global-time-trans;
+    @include lighten-scaling;
 
     &--txt {
         display: inline-block;
