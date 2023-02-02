@@ -1,0 +1,151 @@
+.menu {
+    @include core-pad;
+    background-color: $fake-wdt;
+    border-radius: 2em 2em 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 40px;
+
+    &__button {
+        padding: 20px 0; // Pixel perfect.
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+
+        &--fav {
+            padding-right: 0.45em; // Match avec le pixel perfect.
+        }
+
+        & > span {
+            font-family: 'Shrikhand', cursive;
+            font-size: 3ch;
+            margin-right: 1em;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 40px; // Pixel perfect.
+        margin-bottom: 4em;
+
+        &--title {
+            position: relative;
+            padding: 0.5em 0;
+            margin: 1em 0;
+
+            &::after {
+                position: absolute;
+                width: 40px;
+                content: "";
+                bottom: 0;
+                left: 0;
+                border-bottom: 3px solid $third-color;
+               }
+        }
+    }
+
+    &-card {
+        position: relative;
+        right: 0.25em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end; // Ramène le prix en bas de box.
+        padding: 1em 1.45em 1em 0.8em; // Mesure pour pixel perfect.
+        width: auto;
+        background-color: #FFF;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 1.5em;
+        animation: card-reveal 500ms linear backwards;
+        overflow: hidden;
+
+        @for $i from 1 through 4 { // Pour chaque itération de 1 à 4.
+            &--appear-#{$i} {      // Fait "menu-card--appear-$i" avoir du delay de 250ms * le numéro d'itération. 
+            animation-delay: calc(250ms*$i);
+            }
+        }
+
+        &--section {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        &__frame {
+            overflow: hidden;
+        }
+
+        &__txt {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4em;
+            width: 80%;
+            
+            &--main {
+                @include single-line-txt;
+                font-size: large;
+                font-weight: bold;
+            }
+            &--sub {
+                @include single-line-txt;
+            }
+
+            &--price {
+                font-size: large;
+                font-weight: bold;
+                color: $txt-second-color;
+                transition: $global-time-trans; // Necessaire pour le retour, une fois unhover.
+            }
+
+            &--checkbox {
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                height: 80px
+            }  
+        }   
+
+        &:hover {
+            .fa-circle-check {
+                display: inline;
+            }
+            .menu-card__txt {
+
+                &--checkbox {
+                    width: 70px;
+                }
+
+                &--price {
+                    transition: $global-time-trans;
+                    margin-right: 70px;
+                }
+            }
+        }   
+    }
+    
+    @media screen and (min-width:769px) {
+        padding-right: 10%;
+        padding-left: 10%;
+
+        &__title {
+            padding-top: 50px; // Pixel perfect.
+            justify-content: center;
+
+            &--fav {
+                padding-right: 0em;
+            }
+        }
+
+        &-card{
+            padding: 1em 1.9em 1em 1.6em; // Mesure pour pixel perfect.        
+        }
+    }
+}
+

@@ -1,0 +1,114 @@
+.instruction {
+    @include core-pad;
+    padding-bottom: 6em;
+    display: flex;
+    flex-direction: column;
+    width: 100%; // En cas très basse résolution.
+
+
+    &__title {
+        @include usualy-title;
+        padding-bottom: 0.5em;
+    }
+
+    &__steps {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        
+        &-unit {
+            display: grid;
+            grid-template-columns: 1fr 1fr 8fr;
+            width: 80%;
+            background-color: $fake-wdt;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 2em;
+            text-align: center;
+            align-items: center;
+            padding: 25px 1.75em;
+            background: #F6F6F6;
+
+            &:hover {
+                background-color: #F5EDFF;
+                & .instruction__steps-unit--icn {
+                    color: $primary-color;
+                }
+            }
+
+            &--number {
+            @include instruction-nmb;
+            color: #FFF;
+            background-color: $primary-color;
+            border-radius: 100%;
+            }
+
+            &--txt {
+                font-size: large;
+                font-weight: bold;
+
+                position: relative;
+                right: 2.25em;
+            }
+
+            &--icn {
+                color: $fake-grey;
+                font-size: xx-large;
+                margin-right: 1em;
+                margin-left: 0.5em;
+
+                position: relative;
+                right: 1em;
+            }
+        }
+    }
+
+    @media screen and (min-width:769px) {
+        width: auto;
+    
+        &__steps {
+            width: auto;
+            flex-direction: row;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center; // Liberté esthétique.
+    
+            &-unit {
+                min-width: 16em;
+                width: 25%;
+                padding: 1.25em;
+    
+                &--number {
+                    width: $round-icn-desk;
+                    height: $round-icn-desk;
+                    line-height: $round-icn-desk;
+                    min-height: $round-icn-desk;
+                    min-width: $round-icn-desk;
+                    right: 1.5em;
+                }
+    
+                &--icn {
+                    padding-left: 10px;
+                }
+    
+                &--txt {
+                    font-size: large;
+                    font-weight: bold;
+                    right: 2em;
+                }
+            }
+        }
+    }
+    
+    @media screen and (min-width:1480px) {
+        &__steps {
+            justify-content: flex-start;
+            // &-unit {
+            //     &--txt {
+            //         font-size: medium;
+            //     }
+            // }
+        }
+    }
+}

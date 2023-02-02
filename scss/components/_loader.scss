@@ -1,0 +1,59 @@
+$size: 5vh;
+$anim-dur: 600ms;
+$anim-delay: calc($anim-dur / 5);
+
+.loader {
+    position: absolute;
+    top: 0;
+    animation: loader-stop 1000ms 1500ms forwards;
+    z-index: 2;
+}
+
+.load {
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $fake-wdt;
+    gap: 4vw;
+
+    &--bottom {
+        top: 50%;
+    }
+    &__bar {
+        background-color: $primary-color;
+        height: 70%;
+        width: $size;
+        animation: bars $anim-dur backwards infinite ease-in-out alternate;
+
+        @for $i from 1 through 5 { // Pour chaque itération, selectionne les barres du dessous > applique une autre couleur.
+            &--#{$i}-inv {
+                background-color: $third-color;
+                animation-direction: alternate-reverse;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
+
+.load__bar--1, .load__bar--1-inv  {
+    animation-delay: 100ms;
+}
+
+.load__bar--2, .load__bar--2-inv {
+    animation-delay: 200ms;
+}
+
+.load__bar--3, .load__bar--3-inv {
+    animation-delay: 300ms;
+}
+
+.load__bar--4, .load__bar--4-inv {
+    animation-delay: 400ms;
+}
+
+.load__bar--5, .load__bar--5-inv  {
+    animation-delay: 500ms;
+}
