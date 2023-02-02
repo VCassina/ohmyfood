@@ -1,7 +1,9 @@
-29/01/2023 - Avancement sur les animations.
+31/01/2023 - Avancement sur les animations.
 
 Avancées :
 
+- Correction de problèmes mineurs.
+- Redimentionnement pour se rapprocher d'un pixel perfect.
 - Sur les pages des RESTAURANTS (MENU) UNIQUEMENT :
 	-> A l'arrivé, les plats apparaissent petit à petit.
 	-> Petite cloche comme sur la maquette lorsqu'on choisit un plat (survol - Compatible Mobile & Desktop).

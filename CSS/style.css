@@ -703,9 +703,6 @@ footer, footer a {
   bottom: 0px;
   height: 80px;
 }
-.menu-card:hover {
-  background-color: #F5EDFF;
-}
 .menu-card:hover .fa-circle-check {
   display: inline;
 }
