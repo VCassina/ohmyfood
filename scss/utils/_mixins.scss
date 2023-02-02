@@ -1,0 +1,44 @@
+
+@mixin usualy-title {
+    font-size: xx-large;
+}
+
+@mixin core-pad {
+    padding: 3em 1.20em; // Contient surtout un écart latérale entre 17 & 20px pour matcher avec le pixel perfect.
+}
+
+@mixin instruction-nmb {
+    width: $round-icn;
+    height: $round-icn;
+    line-height: $round-icn;
+
+    // Evite la déformation en cas de très basse résolution.
+    min-width: $round-icn;
+    min-height: $round-icn;
+
+    position: relative;
+    right: 2em;
+    font-size: x-large;
+}
+
+@mixin single-line-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+@mixin lighten-scaling {
+    &:hover {
+    transform: scale($global-scale-trans);
+    background: linear-gradient(lighten($second-color, 2), lighten($primary-color, 2));
+    }
+}
+
+@mixin shadow-scaling {
+    &:hover {
+    transform: scale($global-scale-trans);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+}

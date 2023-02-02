@@ -1,0 +1,63 @@
+.fav-checkbox {
+    font-size: xx-large;
+    align-self: center;
+    margin-right: 0.5em;
+    z-index: 1; // Nécessaire pour être clickable par dessus la card clickable également.
+
+    transition: all $global-time-trans;
+
+    & input[type="checkbox"] {
+        display: none;
+
+        &:checked ~ .fav-checkbox__icn {
+            display: none;
+            
+        }
+        &:checked ~ .fav-checkbox__icn-fav {
+            display: inline;
+            animation : fav 500ms linear forwards;
+        }
+
+        &:not(:checked) ~ .fav-checkbox__icn {
+            animation : fav 500ms linear backwards;
+        }
+    }
+    
+    &__icn {
+        cursor: pointer;
+            &-fav {
+                display: none;
+                background: -webkit-linear-gradient($second-color, $primary-color);
+                background-clip: text; // Essentiel pour coller au rendu qui suit la courbe !
+                color: transparent; // A mes yeux inutiles mais nécessaire pour le W3C + warning message.
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+}
+
+.meal-checkbox {
+    display: flex;
+    width: 0; // C'est de cette façon que l'on cherche à l'a rendre invisible pour qu'elle soit facilement détractable.
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    z-index: 1;
+    background-color: $third-color;
+
+    transition: all $global-time-trans;
+
+    & input[type="checkbox"] {
+        display: none;
+    }
+
+    .fa-circle-check {        
+        display: none;
+        color: $third-color;
+        background-color: white;
+        border-radius: 100%;
+    }
+
+    /* Le hover qui révèle .fa-circle-check n'est pas ici mais dans la card en question, c'est elle qu'il faut survoler dans ce but. */
+}
