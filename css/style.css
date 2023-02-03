@@ -82,16 +82,12 @@ body {
   font-size: 16px;
   font-weight: bold;
   transition: all 300ms;
+  width: 220px;
+  text-align: center;
 }
 .button__gradient:hover {
   transform: scale(1.05);
   background: linear-gradient(#ff83dd, #985ede);
-}
-.button__gradient--txt {
-  display: inline-block;
-  width: 165px;
-  height: 25px;
-  text-align: center;
 }
 
 .fav-checkbox {
@@ -596,9 +592,6 @@ footer, footer a {
   flex-direction: column;
   align-items: center;
   column-gap: 40px;
-}
-.menu__button {
-  padding: 20px 0;
 }
 .menu__title {
   display: flex;

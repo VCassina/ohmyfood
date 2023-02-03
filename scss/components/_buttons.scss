@@ -11,10 +11,6 @@
     transition: all $global-time-trans;
     @include lighten-scaling;
 
-    &--txt {
-        display: inline-block;
-        width: 165px; // Pixel perfect.
-        height: 25px;
-        text-align: center;
-    }
+    width: 220px; // Pixel perfect.
+    text-align: center;
 }

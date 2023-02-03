@@ -7,10 +7,6 @@
     align-items: center;
     column-gap: 40px;
 
-    &__button {
-        padding: 20px 0; // Pixel perfect.
-    }
-
     &__title {
         display: flex;
         flex-direction: row;
